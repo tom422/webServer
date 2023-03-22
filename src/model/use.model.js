@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize')
 const seq = require('../db/seq')
 
 // 创建模型(Model zd_user -> 表 zd_users)
-const User = seq.define('zd_user', {
+const User = seq.define('h_user', {
   // id 会被sequelize自动创建, 管理
   user_name: {
     type: DataTypes.STRING,

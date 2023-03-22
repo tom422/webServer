@@ -14,10 +14,12 @@ const {
   changePassword,
 } = require('../controller/user.controller')
 
+const validateSchemaJoi = require('../middleware/validateParams')
+const { user_login_schema } = require('../schema/user')
 const router = new Router({ prefix: '/users' })
 
 // 注册接口
-router.post('/register', userValidator, verifyUser, crpytPassword, register)
+router.post('/register', validateSchemaJoi('get',user_login_schema), verifyUser, crpytPassword, register)
 
 // 登录接口
 router.post('/login', userValidator, verifyLogin, login)
