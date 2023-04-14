@@ -11,7 +11,11 @@ const validateSchemaJoi = (method, schema) => {
         }
         const { value, error } = schema.validate(data);
         if (error) {
-            ctx.body = error;
+            // console.log(value);
+            // ctx.body = {
+            //     message:error.message
+            // };
+            ctx.app.emit('error', error.message, ctx)
         } else {
            await next();
         }

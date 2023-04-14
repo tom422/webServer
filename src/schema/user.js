@@ -17,16 +17,32 @@ const password = joi
   .pattern(/^[\S]{6,12}$/)
   .required()
 
+ 
 
-
-
+ 
 
 
 // 注册和登录表单的验证规则对象
-exports.user_login_schema = {
+exports.user_login_schema = joi.object({
   user_name,
   password,
-}
+})
+
+
+// 注册和登录表单的验证规则对象
+exports.user_login_schema = joi.object({
+  user_name,
+  password,
+})
+
+// // 注册和登录表单的验证规则对象
+// exports.user_login_schema = {
+//   // 表示需要对 req.body 中的数据进行验证
+//   body: {
+//     user_name,
+//     password,
+//   },
+// }
 
 
 
